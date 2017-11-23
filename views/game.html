@@ -14,7 +14,7 @@
     		<div class="col-md-4"></div>
     		<div class="col-md-4">
 				<h1 class="display-4">Угадай кто?</h1>
-				<img style="margin-bottom: 10px" src="{{ img }}" width="640" height="480" alt="..." class="img-thumbnail">
+				<img style="margin-bottom: 10px; width: 640px; height: 480px" src="{{ img }}" alt="..." class="img-thumbnail">
 
         <form method="POST">
 
@@ -30,7 +30,11 @@
         </form>
 
         <ul class="list-group" style="margin-top: 15px">
-          <li class="list-group-item">Прогресс: {{ user.pointer + 1 }} / {{ len(user.images) }}</li>
+          <li class="list-group-item">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ ((user.pointer + 1) / len(user.images))  * 100 }}%;"></div>
+            </div>
+          </li>
           <li class="list-group-item">Правильных ответов: {{ user.good }}</li>
           <li class="list-group-item">Ошибок: {{ user.bad }}</li>
         </ul>
