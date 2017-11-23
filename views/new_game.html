@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Новая игра</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container text-center" style="margin-top: 25px">
+    	<div class="row">
+    		<div class="col-md-4"></div>
+    		<div class="col-md-4">
+				<h1 class="display-4">Новая игра</h1>
+				<form method="POST">
+					<div class="form-group">
+						<label for="difficult">Сложность</label>
+						<select id="difficult" name="difficult" class="form-control">
+							<option value="0">Легко (1-10)</option>
+							<option value="1">Средне (1-50)</option>
+							<option value="2">Сложно (1-100)</option>
+						</select>
+					</div>
+					<input class="btn btn-success" type="submit" value="Начать" />
+				</form>
+			</div>
+            <table class="table table-bordered" style="margin-top: 15px">
+              <thead>
+                <tr>
+                  <th>Сессия</th>
+                  <th>Правильных</th>
+                  <th>Ошибок</th>
+                </tr>
+              </thead>
+              <tbody>
+                % for game in last_games:
+                <tr>
+                  <td>{{game[1]}}</td>
+                  <td>{{game[6]}}</td>
+                  <td>{{game[7]}}</td>
+                </tr>
+                % end
+              </tbody>
+            </table>
+    	</div>
+	</div>
+
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
