@@ -78,7 +78,7 @@ def static_request(path):
 
 
 if __name__ == "__main__":
-	if len(sys.argv) < 2:
-		print('USAGE: ./run.py <file_with_persons_list>')
+    if len(sys.argv) < 2:
+        print('USAGE: ./run.py <file_with_persons_list>')
     app = GuessWhoApplication(sys.argv)
     app.run()
